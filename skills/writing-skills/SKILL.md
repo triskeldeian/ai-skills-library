@@ -13,6 +13,8 @@ Write concise guidance that changes how an agent approaches a recurring class of
 
 Read the user's source material, the existing skill if any, and applicable repository instructions. Identify the requests the skill should handle, the reusable approach it should teach, and what successful execution looks like.
 
+For an existing skill, make the smallest change that addresses the requested behavior and apply only the relevant steps below. Preserve its name, supported metadata, invocation settings, and resource interfaces unless the requested change requires altering them. Before moving or removing a resource or changing its interface, inspect its references and callers and update affected uses.
+
 Proceed from the available context. Ask only when missing information would materially change the skill's scope or behavior. Keep project-specific facts in project instructions unless they are necessary to the skill's reusable workflow.
 
 Finish with a clear purpose and an observable outcome. A particular example can illustrate the approach; it should not silently become the only supported case.
@@ -37,7 +39,9 @@ Teach how to solve the class of problems. Use examples and output templates only
 
 ### 4. Organize the skill
 
-Create `<kebab-case-name>/SKILL.md` in the user's requested location, following the target repository's conventions. Use YAML frontmatter with a unique `name` matching the directory and a concise `description` stating the capability and when to use it.
+For a new skill, create `<kebab-case-name>/SKILL.md` in the user's requested location, following the target repository's conventions. Use YAML frontmatter with a unique `name` matching the directory and a concise `description` stating the capability and when to use it.
+
+Describe the user's intent and the situations where the skill helps. Add an exclusion only when it prevents likely confusion with a nearby capability.
 
 Keep the entrypoint comfortably below 500 lines and 5,000 tokens; these are ceilings to stay under, not targets to fill. Prefer a single focused document until the content justifies supporting files.
 
@@ -56,7 +60,19 @@ Check frontmatter, names, local links, required resources, and any commands or s
 
 Verify discovery using the target environment's tooling. Keep installation separate from discovery.
 
-Prune instructions that add noise or unnecessarily constrain reasonable solutions. Finish by stating what was drafted, what was checked, and what still needs behavioral validation. A request for an initial draft does not require a full evaluation framework.
+For automatically selected skills, also check activation: try a realistic request that should load the skill and a nearby request that shares vocabulary but should not. Let the agent choose without explicitly invoking the skill, and check whether it actually loads it. Revise the description if either selection is wrong, then recheck both requests. If activation cannot be observed, review the description against those requests and report this as a description review, not a successful activation test.
+
+### 6. Refine from evidence
+
+Use the exercises to improve the skill:
+
+1. Inspect outputs, available user feedback, and execution traces. Look for incorrect results, skipped decisions, unnecessary work, and repeated rediscovery, even when the final output is acceptable.
+2. Address the underlying cause. Add or clarify missing guidance, or remove instructions that create noise or unnecessarily constrain reasonable solutions. Generalize the correction beyond the particular test case.
+3. Rerun failed or affected cases and relevant previously successful cases. Check that the correction helps without breaking behavior that already worked.
+
+Repeat until the agreed outcome is met or further iterations no longer produce meaningful improvement. Report unresolved issues when stopping. If execution is unavailable, state which proposed corrections remain untested.
+
+Finish by stating what changed, what was checked, and what still needs behavioral validation. Keep the effort proportional to the change; an initial draft does not require a full evaluation framework.
 
 ## Gotchas
 
