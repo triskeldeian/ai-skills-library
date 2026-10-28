@@ -24,14 +24,14 @@ After this repository is published to GitHub, install all or selected skills wit
 
 ```bash
 # Browse skills exposed by the repository
-npx skills add <github-owner>/ai-skills-library --list
+npx skills add triskeldeian/ai-skills-library --list
 
 # Install interactively (the CLI detects supported local agents)
-npx skills add <github-owner>/ai-skills-library
+npx skills add triskeldeian/ai-skills-library
 
 # Install all skills for Codex or Claude Code
-npx skills add <github-owner>/ai-skills-library --agent codex --all
-npx skills add <github-owner>/ai-skills-library --agent claude-code --all
+npx skills add triskeldeian/ai-skills-library --agent codex --all
+npx skills add triskeldeian/ai-skills-library --agent claude-code --all
 ```
 
 Use `-g` for a user-level installation. Run `npx skills --help` for the current agent list and options.
