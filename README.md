@@ -2,6 +2,8 @@
 
 A personal, open-source collection of reusable AI-agent skills and related tooling.
 
+This library is designed to be developed with AI-agent support. Contributors provide goals, domain knowledge, and feedback; agents help draft, review, and refine skills. Every new or modified skill is reviewed using this library's [writing-skills](skills/writing-skills/SKILL.md) guidance.
+
 Skills in this repository are written once and distributed to the agent harnesses where they are useful. The initial targets are [OpenAI Codex](https://openai.com/codex/) and [Claude Code](https://docs.anthropic.com/en/docs/claude-code), with the [Skills CLI](https://skills.sh/) providing a portable installation path for those and other supported agents.
 
 ## Repository layout

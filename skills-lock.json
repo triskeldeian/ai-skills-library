@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "writing-skills": {
+      "source": ".",
+      "sourceType": "local",
+      "computedHash": "8b843f11dd7b62ecf0ad8eb3f47ae1579bc9b1bc80db10556f61c740f07a8170"
+    }
+  }
+}

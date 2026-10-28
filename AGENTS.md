@@ -38,6 +38,8 @@ description: Helps an agent do a specific task. Use when the user asks to do tha
 
 ## Authoring guidance
 
+Always use the `writing-skills` skill to review every new or modified skill, including changes to its scripts, references, or assets and changes to `writing-skills` itself. Check the result against its authoring and validation guidelines. If the skill is not installed in the current harness, read and apply the canonical [skills/writing-skills/SKILL.md](skills/writing-skills/SKILL.md) directly.
+
 - Put essential workflow instructions in `SKILL.md`; avoid long background material there.
 - Link to files in `references/` only when they are needed for a particular branch of the workflow.
 - Use relative paths within the skill directory and state required runtimes or environment variables.
@@ -66,8 +68,9 @@ Use the current `npx skills --help` output as the authority for CLI flags and th
 
 Before submitting a skill or tooling change:
 
-1. Verify frontmatter and paths are correct.
-2. Exercise the normal path and at least one likely failure path.
-3. Confirm the skill can be discovered with the Skills CLI.
-4. Update the README if installation, prerequisites, or the repository layout changes.
-5. Keep the change scoped; avoid unrelated formatting or generated files.
+1. For every new or modified skill, complete the `writing-skills` review described above. Address findings and report any unresolved issues or checks that could not be run.
+2. Verify frontmatter and paths are correct.
+3. Exercise the normal path and at least one likely failure path.
+4. Confirm the skill can be discovered with the Skills CLI.
+5. Update the README if installation, prerequisites, or the repository layout changes.
+6. Keep the change scoped; avoid unrelated formatting or generated files.
