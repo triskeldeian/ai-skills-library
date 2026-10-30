@@ -72,5 +72,6 @@ Before submitting a skill or tooling change:
 2. Verify frontmatter and paths are correct.
 3. Exercise the normal path and at least one likely failure path.
 4. Confirm the skill can be discovered with the Skills CLI.
-5. Update the README if installation, prerequisites, or the repository layout changes.
-6. Keep the change scoped; avoid unrelated formatting or generated files.
+5. Update the README if installation, prerequisites, or the repository layout changes, or when changes processes that must be handled by the owner.
+6. Update AGENTS.md when changing processes that should be handled by an agent
+7. Keep the change scoped; avoid unrelated formatting or generated files.
